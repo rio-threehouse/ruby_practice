@@ -36,8 +36,10 @@ end
 
 # 直接スクリプトで実行した時のみ実行される __File__ = スクリプトのファイル名、$0 = 実行したスクリプトのファイル名
 if __FILE__ == $0
-  # @namesになにも入れない
+  #クラスからインスタンスを生成
   mg = MegaGreeter.new
+
+  # @namesになにも入れない
   mg.say_hi
   mg.say_bye
 
@@ -50,4 +52,10 @@ if __FILE__ == $0
   mg.names = ["ヒトカゲ","フシギダネ","ゼニガメ"]
   mg.say_hi
   mg.say_bye
+
+  # クラスはclassクラス
+  puts MegaGreeter.class
+  # MegaGreeterから生成されたインスタンスはMegaGreeterクラス
+  puts mg.class
+  puts Integer.superclass
 end
